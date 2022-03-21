@@ -34,6 +34,24 @@
       "compilerOptions": {
         "tsConfigPath": "apps/notification/tsconfig.app.json"
       }
+    },
+    "auth-service": {
+      "type": "application",
+      "root": "apps/auth-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth-service/tsconfig.app.json"
+      }
+    },
+    "auth-lib": {
+      "type": "library",
+      "root": "libs/auth-lib",
+      "entryFile": "index",
+      "sourceRoot": "libs/auth-lib/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/auth-lib/tsconfig.lib.json"
+      }
     }
   }
 }

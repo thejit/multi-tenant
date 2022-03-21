@@ -7,9 +7,11 @@ import { UserConfigModule } from './user-config.module';
 import { UserServiceController } from './user-service.controller';
 import { UserServiceService } from './user-service.service';
 import { Users } from './user.model';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
+    UsersModule,
     MongooseModule.forRootAsync({
       useClass: MongooseConfigService,
     }),
@@ -18,7 +20,6 @@ import { Users } from './user.model';
       // name: 'development',
       useExisting: SequelizeConfigService,
     }),
-    SequelizeModule.forFeature([Users]),
   ],
   controllers: [UserServiceController],
   providers: [UserServiceService],

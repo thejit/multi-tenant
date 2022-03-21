@@ -22,15 +22,21 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.4.1",
+    "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.4.1",
+    "@nestjs/jwt": "^8.0.0",
     "@nestjs/microservices": "^8.4.1",
     "@nestjs/mongoose": "^9.0.3",
+    "@nestjs/passport": "^8.2.1",
     "@nestjs/platform-express": "^8.4.1",
     "@nestjs/sequelize": "^8.0.0",
+    "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "mongoose": "^6.2.7",
     "mysql2": "^2.3.3",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "redis": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -45,6 +51,7 @@
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
+    "@types/passport-local": "^1.0.34",
     "@types/sequelize": "^4.28.11",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
@@ -80,7 +87,11 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/apps/"
-    ]
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^@app/auth-lib(|/.*)$": "<rootDir>/libs/auth-lib/src/$1"
+    }
   }
 }
