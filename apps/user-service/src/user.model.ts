@@ -5,7 +5,9 @@ import {
   CreatedAt,
   UpdatedAt,
   BelongsToMany,
+  ForeignKey,
 } from 'sequelize-typescript';
+import { Organizations } from './organizations.model';
 
 @Table({ tableName: 'Users' })
 export class Users extends Model<Users> {
@@ -23,4 +25,11 @@ export class Users extends Model<Users> {
 
   @Column({ allowNull: false })
   type: string;
+
+  @ForeignKey(() => Organizations)
+  @Column
+  organizationId: number;
+
+  @BelongsToMany(() => PrivilegeGroup, () => GroupUser)
+  privilegeGroup: PrivilegeGroup[];
 }
